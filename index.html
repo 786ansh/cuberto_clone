@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/aayushchouhan24/sheryjs@main/dist/Shery.css" />
+<!--    
+    <link rel="stylesheet" href="/thecuberto website/style.css"> -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+         
+        }
+        .cursor{
+            height: 10px;
+            width: 10px;
+            background-color:black;
+            border-radius: 100px;
+            position: absolute;
+            mix-blend-mode: difference;
+            transition: all linear .2;
+        }
+        #main{
+            width: 100%;
+            
+        }
+        #home{
+            width: 100%;
+            height: 100vh;
+           
+        }
+        #nav{
+            width: 100%;
+            padding: 15px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        #nav img{
+            
+            width: 150px;
+            
+        }
+        .right a{
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: -1px;
+            color: black;
+        }
+        .right{
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        .homemain{
+            
+            padding: 15vw 15vw;
+            line-height: 1;
+            
+            
+        }
+        
+        .headings {
+            display: flex;
+            gap: 30px;
+            font-size: 3rem;
+            text-transform: capitalize;
+            letter-spacing: -3px;
+            color: transparent;
+            -webkit-text-stroke: 1px #000;
+        }
+        .headings h1:hover{
+            color: #000;
+        
+        }
+        .homemain h3{
+            font-size: 30px;
+            font-weight: 100;
+        }
+        .homelast{
+            padding: 5vw 15vw;
+            width: 75%;
+        }
+        .homelast p{
+            font-size: 1.6vw;
+            font-weight: 400;
+            letter-spacing: -0.40856px;
+        }
+        .homelast p::selection{
+            color: white;
+            background-color: black;
+        }
+        *::selection{
+            color: white;
+            background-color: black;
+        }
+        .featured{
+            padding: 5vw 15vw;
+        }
+        .fhead> h1{
+            font-size: 4vw;
+            font-weight: 400;
+        
+        }
+        .fhead>h1:nth-child(2){
+            color: transparent;
+            -webkit-text-stroke: 1px black;
+        }
+        .fimages{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: space-around;
+        }
+        #left{
+            width: 45%;
+            height: 100%;
+            overflow: hidden;
+            
+        }
+        
+        #right{
+            width: 45%;
+            height: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        #right .images{
+            width: 90%;
+            height: 90%;
+            position: flex-end;
+            
+        
+        }
+        #fright .images img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .fleftelem{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            height: inherit;  
+            text-transform: capitalize;
+            
+            
+        }
+        .fleftelem h1{
+            font-size: 2.5vw;
+           line-height: 1;
+           font-weight: 600;
+           width: 90%;
+           margin: 1.5vw 0;
+           
+        }
+        .fleftelem h3{
+            margin-left: -22.5vw;
+            font-weight: 500;
+            font-size: 1.3vw;
+        }
+        .fleftelem h4{
+            margin-left: -17.5vw;
+            font-weight: 400;
+            opacity: .7;
+            font-size: 1.003vw;
+        }
+        .btn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn button{
+            padding: 1.2vw 1.2vw;
+            font-size: 1.3vw;
+            border-radius: 100px;
+            background-color: #fff;
+            border: 1px solid gray;
+            letter-spacing: -.5px;
+        }
+        .develop{
+            width: 100%;
+            padding: 5vw 10vw;
+            
+        }
+        .develop h1{
+            font-size: 3.8vw;
+            font-weight: 400;
+            width: 60%;
+            line-height: 1;
+        }
+        .develop p{
+            font-size: 1.5vw;
+            margin-top: 3vw;
+            letter-spacing: -.5px;
+            width: 60%;
+        
+        }
+        #slides {
+            padding: 3vw 10vw;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .slide {
+            width: 30%;
+        }
+        
+        .slide .img {
+            width: 100%;
+            height: 270px;
+            overflow: hidden;
+            border-radius: 10px;
+            background-color: yellow;
+        }
+        
+        .slide .img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        .slide .tag {
+            width: fit-content;
+            border-radius: 100px;
+            padding: 10px 22px;
+            background-color: #c8c7c7;
+            margin: 20px 0;
+        }
+        
+        .slide h3 {
+            font-size: 1.4vw;
+            font-weight: 400;
+            letter-spacing: -.5px;
+        }
+        .develop1{
+            padding: 5vw 15vw;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="main">
+        <div class="cursor"></div>
+        <div id="home">
+            <div id="nav">
+                <div class="magnet">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAC/CAMAAAA1kLK0AAAAclBMVEX///8AAABZWVktLS06Ojpqamr19fWFhYX6+vrW1tYwMDBmZmbQ0NDv7++RkZHc3Nx7e3uLi4urq6tKSkoRERHl5eW9vb11dXWXl5coKCh+fn7i4uJQUFCnp6fExMSysrJDQ0NeXl4hISGdnZ0ZGRkUFBTp373UAAAE3UlEQVR4nO2aa3erKhCGNc3NXMz9amPSpPv//8VThQEUPM3u0ayetZ7nk2FwGF4QBtooAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeD3ZomDYiq/S1aIVV6/nFBfMWvG1LX214ur19FsU4g0hFAihQQgNQmgQQoMQml8nxLzgybpWiPl+fV3vxg0u14XxG1//KsQ8ecJDmySHexnP6WjSxeVpMpmcDrbOcDspStJIhEiiy2esGOSey+FRuYy3Z6cng8LrthAuSY+TYyRCHFPBcbFWiVv8Z/oiLRab2LKSkMtfU1trqOyjSIQ4O2/Fb1nV58o1fpgp01Pjny1NW29xFeNh75a+RIq0GsldfSDfC1Hj6ric32tG6YcSYuCI3iDE8KNWvu9ch1VcZ/YjIRwlZr4xc4UQmoUYf8Z11i/XIY6HPxLCKDEMGbO/EmIS8NDOLtXEPtBifPuZEPIB3EK2SUCIUZMQo6D7ds79YcbSyCop9kKJavGsEIfFMMpyWWw3ZcW1/rUtP+tcZLnUhEjzZGeEyBKhqDV3o9pdt9JYh0IcVRM3WczKD+W9WC6fEWIriUeuC8rZq+PuRa5PPdZGiIdYQ3nEQXsQ9w/9Uodbh9bBFqxkVXpCiE87V3Pbeb1SflR8ikoihN0DAkLMa0qaD3gVdYWO380oB/rHE0IkzmupGXU9nG62qRKjc2SEOFpbQIi1H9VH7FdrEzVWy5DpeyEGlfrK+rW4bKpTv0DpfY+MEI4tIMSqLpaZJA25/H/nYOasx/dCVNNq5Wod3jtN93vGhxAQ4haIatIcaRtMvDlo+F6IalQyjM8I4WaJASE2fpF2n0QdEbctxOMpIdwGnxTi+CuFCM3TvxHC/dR/hxCDnwmx9Ca41P+pEJUeKiGqx9m+X61NVPTB7VmZnL1cJ6HFhcGxLlLk7RrXKIgvxM3IWysK7RqdLZbX0v3dDUyeB2YUNbmNRedM7pjpFPXr7XP9xa8s2Tz5QqR+de3LPVqM/FqtslP+nSR+JmOp8yI7sjqLKjdN9fjuOepHRiXHZ2q9+EIsPF/iwc8s3Uot816LemaaU5Ml/iMLiBylyh9LHZj0SPdGLRsn+w2VFAP8rt34QojATre1zjYqOSJ3eCUhVyincpqPR3b6m3NpYnpToBYGczwsj5RzOTVvK2H3S1lmqu9blX4FhJAQtmU3E7cx5SE7SGvd6eAcBye9nj0jFxa5T4vvrkUvV/Y6Z9N7qxv7jtE8uvcR1Ux5aur0eieVm9+dIntH07AAt0NwtyvHZhyymPNF/T6l4KxtWejNeaMQ45NXMXDX1+11ROTMcos+MCWBYOx7/mWa3U4DSuikIySErLRufy++h1NnJy6Np8RFLP41nrNhjutz4uz4XNRvsSX5CgoRjSvVyw9sXXMQb7rWITI7vxuHojYnNtXXjhVj7QOu3DpOTUoQFqL2J4WyJKvefKbeK10ws2HXdqiHDeXmpXWZCf+Uen3bGePUSYw3DUJE85XMiqkc72dWitULpoMmfyyXh2sgl5+tl8vCFL4vzC9ftn3D/4It8muaB7Lihl4t8sdhX7nkGOdF25f/67+aAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/FL+AV/RMro15Pj6AAAAAElFTkSuQmCC" alt="">
+            </div>
+                <div class="right">
+                    <a href="">our showreel</a>
+                    <a href="">menu</a>
+                    <i class="ri-menu-line magnet"></i>
+                    
+                </div>
+            </div>
+            <div class="homemain">
+               
+                <h3>We make it happen.</h3>
+                <div class="headings">
+                    <h1 class="hvr">websites</h1>
+                    <h1 class="hvr">apps</h1>
+                    <h1 class="hvr">branding</h1>
+                </div>
+            </div>
+            <div class="homelast">
+               
+                <p>Leading digital agency with solid design and development expertise.We build readymade websites,mobile applications,and elaborate online business services.</p>
+            </div>
+            <div class="featured">
+                <div class="fhead">
+                    <h1>featured</h1>
+                    <h1>projects</h1>
+                </div>
+                <div class="fimages">
+                    
+                    <div id="left">
+                        <div class="fleftelem">
+                            <h3>Riyadh</h3>
+                            <h1>official website of riyadh,saudi arabia's capital.</h1>
+                            <h4>design,develop,project</h4>
+                        </div>
+                        <div class="fleftelem">
+                            <h3>Riyadh</h3>
+                            <h1>official website of riyadh,saudi arabia's capital.</h1>
+                            <h4>design,develop,project</h4>
+                        </div>
+                        <div class="fleftelem">
+                            <h3>Riyadh</h3>
+                            <h1>official website of riyadh,saudi arabia's capital.</h1>
+                            <h4>design,develop,project</h4>
+                        </div>
+                        <div class="fleftelem last">
+                            <h3>Riyadh</h3>
+                            <h1>official website of riyadh,saudi arabia's capital.</h1>
+                            <h4>design,develop,project</h4>
+                        </div>
+                        
+                    </div>
+                    <div id="right">
+                        <div class="images">
+                            <img src="https://images.unsplash.com/photo-1692343814412-cbe23ff32765?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=767&q=80"
+                            alt="">
+                        <img src="https://images.unsplash.com/photo-1609428079875-ae186c562aff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=689&q=80"
+                            alt="">
+                        <img src="https://images.unsplash.com/photo-1614633833026-0820552978b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80"
+                            alt="">
+                        <img   src="https://images.unsplash.com/photo-1598133894008-61f7fdb8cc3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80"
+                            alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="btn magnet">
+                    <button>view all projects</button>
+                </div>
+                <div class="develop">
+                    <h1>development and design resources</h1>
+                    <p>we regularly release design courses,offer advice to newbie designers,walk oyu through creating awesome effects, and share source files.</p>
+                </div>
+            </div>
+            <div id="slides">
+                <div class="slide">
+                    <div class="img">
+                        <img src="https://cdn.cuberto.com/cb/upload/40bf072f506912f62412b0de381e350d.png" alt="">
+                    </div>
+                    <div class="tag">Design Course</div>
+                    <h3>How To Make Epic Website // Frontend development</h3>
+                </div>
+                <div class="slide">
+                    <div class="img">
+                        <img src="https://cdn.cuberto.com/cb/upload/885fbbc555395f745746b23b73f539f5.png" alt="">
+                    </div>
+                    <div class="tag">Design Course</div>
+                    <h3>How To Make Epic Website // Frontend development</h3>
+                </div>
+                <div class="slide">
+                    <div class="img">
+                        <img src="https://cdn.cuberto.com/cb/upload/40bf072f506912f62412b0de381e350d.png" alt="">
+                    </div>
+                    <div class="tag">Design Course</div>
+                    <h3>How To Make Epic Website // Frontend development</h3>
+                </div>
+            </div>
+            <div class="btn magnet">
+                <button>view all products</button>
+            </div>
+           
+        </div>
+        </div>
+       
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
+
+    <script  type="text/javascript"  src="https://cdn.jsdelivr.net/gh/aayushchouhan24/sheryjs@main/dist/Shery.js"></script>
+    <script>
+        
+
+Shery.mouseFollower();
+Shery.makeMagnet(".magnet");
+Shery.hoverWithMediaCircle(".hvr", {
+    videos: ["https://cdn.cuberto.com/cb/home/hero/1.mp4", "https://cdn.cuberto.com/cb/showreel/1.mp4"],
+  });
+  
+  gsap.to(".fleftelem ", {
+    scrollTrigger: {
+      trigger: ".fimages",
+      pin: true,
+      start: "top top",
+      end: "bottom bottom",
+      endTrigger: ".last",
+      scrub: 1,
+    },
+    y: "-300%",
+    ease: Power1,
+  });
+  
+  let sections = document.querySelectorAll(".fleftelem");
+  Shery.imageEffect(".images", {
+    style: 5,
+    slideStyle: (setScroll) => {
+      sections.forEach(function (section, index) {
+        ScrollTrigger.create({
+          trigger: section,
+          start: "top top",
+          scrub: 1,
+          onUpdate: function (prog) {
+            setScroll(prog.progress + index);
+          },
+        });
+      });
+    },
+  });
+    </script>
+    
+</body>
+</html>
